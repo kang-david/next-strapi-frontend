@@ -19,7 +19,7 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   // get posts from api
-  const res = await fetch('http://https://next-strapi-backend-nr4i6.ondigitalocean.app/posts')
+  const res = await fetch('https://next-strapi-backend-nr4i6.ondigitalocean.app/posts')
   const posts = await res.json()
 
   return {
