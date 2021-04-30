@@ -13,7 +13,7 @@ export default function Post({ post }) {
 
 // tell next.js how many pages there are
 export async function getStaticPaths() {
-  const res = await fetch('https://next-strapi-backend-nr4i6.ondigitalocean.app//posts')
+  const res = await fetch('https://next-strapi-backend-nr4i6.ondigitalocean.app/posts')
   const posts = await res.json()
 
   const paths = posts.map((post) => ({
@@ -22,11 +22,11 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   }
 }
 
-// for each individua page: get the data fro that page
+// for each individual page: get the data for that page
 export async function getStaticProps({ params }) {
   const { slug } = params
 
